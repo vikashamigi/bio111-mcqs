@@ -1,0 +1,108 @@
+/* ===== Smooth page background ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bgMove 8s infinite alternate;
+}
+
+@keyframes bgMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+/* ===== Quiz container ===== */
+.quiz-container {
+  background: white;
+  width: 650px;
+  max-width: 95%;
+  border-radius: 18px;
+  padding: 25px 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  animation: zoomIn 0.6s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Question animation ===== */
+.question {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-30px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* ===== Options ===== */
+.option {
+  background: #f1f3f6;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(5px);
+}
+
+/* ===== Selected option ===== */
+.option.selected {
+  background: #764ba2;
+  color: white;
+  box-shadow: 0 0 10px rgba(118,75,162,0.6);
+}
+
+/* ===== Buttons ===== */
+button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== Timer ===== */
+#timer {
+  font-weight: bold;
+  color: #ff4444;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* ===== Result animation ===== */
+.result {
+  text-align: center;
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
